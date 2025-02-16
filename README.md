@@ -1,5 +1,5 @@
 
-# Drive Music Player
+# Sigma Toonz
 
 Play your music files stored in Google Drive, https://dandalpiaz.github.io/drive-music-player/
 

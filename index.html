@@ -2,12 +2,12 @@
 <html lang="en" data-theme="dark">
 
 <head>
-  <title>Drive Music Player - Play Your Music Files Stored in Google Drive</title>
+  <title>Sigma Toonz - Play Your Music Files Stored in Google Drive</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#000000">
-  <meta name="description" content="Drive Music Player - Play Your Music Files Stored in Google Drive">
-  <link rel="shortcut icon" type="image/png" href="./img/favicon.png">
+  <meta name="description" content="Sigma Toonz - Play Your Music Files Stored in Google Drive">
+  <link rel="shortcut icon" type="image/png" href="https://cdn.glitch.global/76036de6-7e2c-4853-b0dd-29c8cc0392b2/SigmaLogo64.png?v=1735331667279">
   <link rel="manifest" href="manifest.json">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/picocss/1.4.4/pico.min.css" integrity="sha512-RAtoAGzPS5T5sUpCfVpkY5EHHDcqEp26rHYNee0Vx4RT1pxJrt3CWQCVD/ekrPdMowT4ybxYvqClqf9v7oWxYw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" type="text/css" href="style.css?v=12">
@@ -20,18 +20,18 @@
 <body onload="getFolderId()">
 
 <header>
-  <h1><a href=""><img src="./img/favicon.png" alt="drive-music-player logo" />drive-music-player</a></h1>
-  <a id="gh-btn" href="https://github.com/dandalpiaz/drive-music-player" aria-label="drive-music-player GitHub repository"><i class="fa-brands fa-github"></i></a>
+  <h1><a href=""><img src="https://cdn.glitch.global/76036de6-7e2c-4853-b0dd-29c8cc0392b2/SigmaLogo192.png?v=1735330048173" alt="sigma-toonz logo" />Sigma Toonz</a></h1>
+  <a id="gh-btn" href="https://github.com/EricEisaman/sigma-toonz" aria-label="sigma-toonz GitHub repository"><i class="fa-brands fa-github"></i></a>
   <button id="menu-btn" aria-expanded="false" aria-controls="menu" aria-label="toggle menu"><i style="margin-right: 10px;" class="fa-solid fa-bars"></i><i class="fa-solid fa-chevron-down"></i></button>
   <nav id="menu" hidden>
       <ul>
           <li><a href="javascript:void(0);" onclick="changeFolder()">Change Folder / User</a></li>
           <li><a href="https://myaccount.google.com/security">Revoke Access</a></li>
-          <li><a href="https://github.com/dandalpiaz/drive-music-player">GitHub</a></li>
+          <li><a href="https://github.com/EricEisaman">GitHub</a></li>
       </ul>
   </nav>
 </header>
-
+<div class="content">
 <main role="main" class="container">
   <div id="intro" style="display: none;">
     <h2>Play Your Music Files from Google Drive</h2>
@@ -49,7 +49,7 @@
 
 <footer role="contentinfo">
   <ul id="footer-links">
-    <li><strong>Drive Music Player</strong></li>
+    <li><strong>Sigma Toonz</strong></li>
     <li><a href="">Terms</a> &bull; <a href="">Privacy</a> &bull; <a href="">Cookies</a></li>
   </ul>
 
@@ -66,11 +66,29 @@
     </div>
   </div>
 </footer>
+<script src="./THREE.js"></script>
+    <script src="./ParticleBackground.js"></script>
+    <script>
+      // Initialize particle background
+      const background = new ParticleBackground({
+        particleCount: 3000,
+        particleSize: 0.5,
+        speed: 0.5,
+        opacity: 0.6,
+        color: "#ffffff",
+        depth: 500,
+        backgroundColor: "#000000",
+        enableDebug: false,
+      });
 
+      // Cleanup when needed
+      window.addEventListener("beforeunload", () => {
+        background.destroy();
+      });
+    </script>
 <script type="text/javascript" src="scripts.js"></script>
 <script async defer src="https://apis.google.com/js/api.js" onload="gapiLoaded()"></script>
 <script async defer src="https://accounts.google.com/gsi/client" onload="gisLoaded()"></script>
-<!-- <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "78dda2e439c746c5be1edd615aef992f"}'></script> -->
-
+</div>
 </body>
 </html>

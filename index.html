@@ -4,11 +4,17 @@
     <title>Sigma Toonz - Play Your Music Files Stored in Google Drive</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
+    <meta name="theme-color" content="#5ec9ed" />
     <meta
       name="description"
       content="Sigma Toonz - Play Your Music Files Stored in Google Drive"
     />
+    <!-- PWA Meta Tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Sigma Toonz">
+    <meta name="application-name" content="Sigma Toonz">
+    <link rel="apple-touch-icon" href="https://cdn.glitch.global/76036de6-7e2c-4853-b0dd-29c8cc0392b2/SigmaLogo192.png?v=1735331667279">
     <link
       rel="shortcut icon"
       type="image/png"
@@ -274,6 +280,9 @@
         src="https://accounts.google.com/gsi/client"
         onload="gisLoaded()"
       ></script>
+      
+      <!-- PWA Support -->
+      <script src="pwa.js"></script>
     </div>
   </body>
 </html>

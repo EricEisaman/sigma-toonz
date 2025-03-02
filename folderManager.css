@@ -415,7 +415,7 @@
   flex: 1;
 }
 
-.browse-folders-btn {
+.browse-folders-btn, .browse-community-btn {
   background-color: rgba(50, 50, 50, 0.8);
   color: #eee;
   border: none;
@@ -430,8 +430,16 @@
   margin: 0;
 }
 
-.browse-folders-btn:hover {
+.browse-folders-btn:hover, .browse-community-btn:hover {
   background-color: rgba(70, 70, 70, 0.8);
+}
+
+.browse-community-btn {
+  background-color: rgba(94, 201, 237, 0.2);
+}
+
+.browse-community-btn:hover {
+  background-color: rgba(94, 201, 237, 0.3);
 }
 
 /* Responsive Adjustments */
@@ -465,4 +473,118 @@
 /* Hidden field for folder database ID */
 #folder-db-id {
   display: none;
+}
+
+/* Community Library Styles */
+#community-lib-btn {
+  margin-left: 10px;
+  background-color: #5ec9ed;
+  color: #222;
+  border: none;
+  border-radius: 25px;
+  padding: 8px 15px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#community-lib-btn:hover {
+  background-color: #4ab8dc;
+}
+
+#community-library-section {
+  display: none;
+  margin-top: 20px;
+  padding: 20px;
+  background-color: rgba(25, 25, 25, 0.7);
+  border-radius: 8px;
+  border-left: 4px solid #5ec9ed;
+}
+
+#community-library-section.active {
+  display: block;
+}
+
+.section-title {
+  color: #5ec9ed;
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.community-info {
+  color: #ccc;
+  margin-bottom: 20px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+#community-folders {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.community-folder {
+  background-color: rgba(40, 40, 40, 0.8);
+  border-radius: 8px;
+  padding: 15px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
+  border-left: 3px solid #5ec9ed;
+}
+
+.community-folder:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.folder-description {
+  color: #aaa;
+  font-size: 14px;
+  margin: 10px 0;
+  line-height: 1.4;
+}
+
+.add-community-folder-btn {
+  background-color: #5ec9ed;
+  color: #222;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  width: 100%;
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.add-community-folder-btn:hover {
+  background-color: #4ab8dc;
+}
+
+.add-community-folder-btn:disabled {
+  background-color: #388a9e;
+  cursor: not-allowed;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  #community-lib-btn {
+    margin-left: 0;
+    margin-top: 10px;
+    width: 100%;
+    justify-content: center;
+  }
+  
+  #community-folders {
+    grid-template-columns: 1fr;
+  }
 } 

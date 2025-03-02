@@ -532,3 +532,55 @@ ul#footer-links li:first-child {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   min-height: 100vh; /* Ensure content can scroll */
 }
+
+/* Quick Start Section */
+.quick-start-section {
+  background-color: rgba(40, 40, 40, 0.7);
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 25px;
+  border-left: 4px solid #5ec9ed;
+}
+
+.quick-start-section h3 {
+  color: #5ec9ed;
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.quick-start-section p {
+  color: #ddd;
+  margin-bottom: 15px;
+}
+
+.quick-start-btn {
+  background-color: #5ec9ed !important;
+  color: #222 !important;
+  border: none !important;
+  padding: 10px 20px !important;
+  border-radius: 25px !important;
+  cursor: pointer;
+  font-weight: 600 !important;
+  width: auto !important;
+  display: inline-flex !important;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 0 !important;
+  transition: background-color 0.2s, transform 0.2s !important;
+}
+
+.quick-start-btn:hover {
+  background-color: #4ab8dc !important;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .quick-start-btn {
+    width: 100% !important;
+    justify-content: center;
+  }
+}

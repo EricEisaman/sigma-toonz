@@ -78,6 +78,9 @@
             <a href="javascript:void(0);" onclick="folderManager.openFolderManager()">Manage Folders</a>
           </li>
           <li>
+            <a href="javascript:void(0);" onclick="communityLibrary.openCommunityLibrary()">Community Library</a>
+          </li>
+          <li>
             <a href="javascript:void(0);" onclick="changeFolder()">Change Folder / User</a>
           </li>
           <li>
@@ -92,6 +95,20 @@
       <main role="main" class="container">
         <div id="intro" style="display: none">
           <h2>Play Your Music Files from Google Drive</h2>
+          
+          <!-- Quick Start Section -->
+          <div class="quick-start-section">
+            <h3><i class="fas fa-rocket"></i> Quick Start</h3>
+            <p>New to Sigma Toonz? Get started instantly with our Community Library featuring curated music collections:</p>
+            <button 
+              type="button" 
+              class="primary quick-start-btn" 
+              onclick="communityLibrary.openCommunityLibrary()"
+            >
+              <i class="fas fa-book"></i> Browse Community Library
+            </button>
+          </div>
+          
           <p>
             Enter the ID for the
             <a href="https://drive.google.com" target="_blank">Google Drive</a>
@@ -128,6 +145,15 @@
               <i class="fa-solid fa-folder-open" style="margin-right: 10px"></i>
               Browse Saved Folders
             </button>
+            <button
+              type="button"
+              class="community-library-btn secondary"
+              style="display: inline-block; width: auto; margin-bottom: 3px"
+              onclick="communityLibrary.openCommunityLibrary()"
+            >
+              <i class="fa-solid fa-book" style="margin-right: 10px"></i>
+              Browse Community Library
+            </button>
           </form>
         </div>
         <!-- end intro -->
@@ -138,6 +164,9 @@
           <span id="current-folder-name">Current Folder</span>
           <button class="browse-folders-btn" onclick="folderManager.openFolderManager()">
             <i class="fas fa-exchange-alt"></i> Change
+          </button>
+          <button class="browse-community-btn" onclick="communityLibrary.openCommunityLibrary()">
+            <i class="fas fa-book"></i> Community
           </button>
         </div>
 
@@ -193,10 +222,22 @@
             <button id="add-folder-btn">
               <i class="fas fa-plus"></i> Add New Folder
             </button>
+            <button id="community-lib-btn">
+              <i class="fas fa-book"></i> Browse Community Library
+            </button>
           </div>
           
           <div id="tag-filters">
             <!-- Tag filters will be populated dynamically -->
+          </div>
+          
+          <!-- Community Library Section -->
+          <div id="community-library-section">
+            <h3 class="section-title">Community Library</h3>
+            <p class="community-info">Browse and add music folders shared by the community. These folders are curated collections that you can add to your personal library.</p>
+            <div id="community-folders">
+              <!-- Community folders will be populated dynamically -->
+            </div>
           </div>
           
           <div id="saved-folders">
@@ -267,6 +308,7 @@
       </script>
       <script type="text/javascript" src="db.js"></script>
       <script type="text/javascript" src="folderManager.js"></script>
+      <script type="text/javascript" src="communityLibrary.js"></script>
       <script type="text/javascript" src="scripts.js"></script>
       <script
         async

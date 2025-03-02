@@ -11,6 +11,7 @@ const filesToCache = [
   '/scripts.js',
   '/db.js',
   '/folderManager.js',
+  '/communityLibrary.js',
   '/pwa.js',
   '/THREE.js',
   '/ParticleBackground.js',

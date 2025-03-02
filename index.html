@@ -23,6 +23,7 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" type="text/css" href="style.css?v=12" />
+    <link rel="stylesheet" type="text/css" href="folderManager.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
@@ -68,9 +69,10 @@
       <nav id="menu" hidden>
         <ul>
           <li>
-            <a href="javascript:void(0);" target="_blank" onclick="changeFolder()"
-              >Change Folder / User</a
-            >
+            <a href="javascript:void(0);" onclick="folderManager.openFolderManager()">Manage Folders</a>
+          </li>
+          <li>
+            <a href="javascript:void(0);" onclick="changeFolder()">Change Folder / User</a>
           </li>
           <li>
             <a href="https://myaccount.google.com/security" target="_blank">Revoke Access</a>
@@ -111,9 +113,27 @@
               <i class="fa-brands fa-google" style="margin-right: 10px"></i>
               Login
             </button>
+            <button
+              type="button"
+              class="secondary"
+              style="display: inline-block; width: auto; margin-bottom: 3px"
+              onclick="folderManager.openFolderManager()"
+            >
+              <i class="fa-solid fa-folder-open" style="margin-right: 10px"></i>
+              Browse Saved Folders
+            </button>
           </form>
         </div>
         <!-- end intro -->
+
+        <!-- Current folder display -->
+        <div class="current-folder-display" id="current-folder-display" style="display: none;">
+          <i class="fas fa-folder-open current-folder-icon"></i>
+          <span id="current-folder-name">Current Folder</span>
+          <button class="browse-folders-btn" onclick="folderManager.openFolderManager()">
+            <i class="fas fa-exchange-alt"></i> Change
+          </button>
+        </div>
 
         <div id="contents"></div>
       </main>
@@ -153,6 +173,72 @@
         </div>
       </footer>
       </div>
+
+      <!-- Folder Manager Modal -->
+      <div id="folder-manager-modal">
+        <div class="folder-manager-container">
+          <div class="folder-manager-header">
+            <h2>Manage Your Folders</h2>
+            <button class="close-folder-manager" onclick="folderManager.closeFolderManager()">&times;</button>
+          </div>
+          
+          <div class="folder-search-container">
+            <input type="text" id="folder-search" placeholder="Search folders by name or tag...">
+            <button id="add-folder-btn">
+              <i class="fas fa-plus"></i> Add New Folder
+            </button>
+          </div>
+          
+          <div id="tag-filters">
+            <!-- Tag filters will be populated dynamically -->
+          </div>
+          
+          <div id="saved-folders">
+            <!-- Saved folders will be populated dynamically -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Add/Edit Folder Modal -->
+      <div id="folder-modal">
+        <div class="folder-modal-container">
+          <div class="folder-modal-header">
+            <h3 id="folder-modal-title">Add New Folder</h3>
+            <button class="close-folder-modal" onclick="folderManager.closeFolderModal()">&times;</button>
+          </div>
+          
+          <form id="save-folder-form">
+            <input type="hidden" id="folder-db-id">
+            
+            <div>
+              <label for="folder-id">Google Drive Folder ID*</label>
+              <input type="text" id="folder-id" required placeholder="Enter Google Drive folder ID">
+            </div>
+            
+            <div>
+              <label for="folder-name">Folder Name</label>
+              <input type="text" id="folder-name" placeholder="Enter a friendly name for this folder">
+            </div>
+            
+            <div>
+              <label for="tag-input">Tags</label>
+              <div class="tag-input-container">
+                <input type="text" id="tag-input" placeholder="Add tags">
+                <button type="button" id="add-tag-btn">Add Tag</button>
+              </div>
+              <div id="folder-tags">
+                <!-- Tags will be populated dynamically -->
+              </div>
+            </div>
+            
+            <div class="folder-form-actions">
+              <button type="button" class="cancel-folder-btn" onclick="folderManager.closeFolderModal()">Cancel</button>
+              <button type="submit" class="save-folder-btn">Save Folder</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
       <script src="./THREE.js"></script>
       <script src="./ParticleBackground.js"></script>
       <script>
@@ -173,6 +259,8 @@
           background.destroy();
         });
       </script>
+      <script type="text/javascript" src="db.js"></script>
+      <script type="text/javascript" src="folderManager.js"></script>
       <script type="text/javascript" src="scripts.js"></script>
       <script
         async

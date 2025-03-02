@@ -1,4 +1,3 @@
-
 /* ----------------------- */
 /* ------GOOGLE INIT------ */
 /* ----------------------- */
@@ -46,6 +45,9 @@ function handleAuthClick(folderId) {
       // only load initial contents on first auth
       if ( !document.getElementById("contents").classList.contains("loaded") ) {
         getContents(folderId, "initial");
+        
+        // Show the current folder display
+        showCurrentFolderInfo(folderId);
       }
 
       // set user email and URL
@@ -183,12 +185,112 @@ function getContents(id, type) {
 
 function submitFolderId(e) {
   e.preventDefault();
-  localStorage.setItem("parentfolder", document.getElementById('parentfolder').value);
-  handleAuthClick(document.getElementById('parentfolder').value);
+  const folderId = document.getElementById('parentfolder').value.trim();
+  
+  if (!folderId) {
+    alert('Please enter a Google Drive folder ID');
+    return;
+  }
+  
+  // Store the folder ID in localStorage for compatibility with existing code
+  localStorage.setItem("parentfolder", folderId);
+  
+  // Try to get folder info from Drive to save it
+  saveCurrentFolder(folderId);
+  
+  // Proceed with authentication and loading
+  handleAuthClick(folderId);
+}
+
+// Save the current folder to IndexedDB if not already saved
+async function saveCurrentFolder(folderId) {
+  try {
+    // Check if folder already exists in the database
+    const existingFolder = await sigmaToonzDB.getFolderByDriveId(folderId);
+    if (existingFolder) {
+      // Update current folder display
+      showCurrentFolderInfo(folderId, existingFolder.name);
+      return;
+    }
+    
+    // Get folder info from Drive API
+    gapi.client.drive.files.get({
+      'fileId': folderId,
+      'fields': 'name'
+    }).then(function(response) {
+      const folderName = response.result.name || folderId;
+      
+      // Save to IndexedDB
+      sigmaToonzDB.addFolder({
+        folderId: folderId,
+        name: folderName,
+        tags: []
+      }).then(() => {
+        console.log('Folder saved to database');
+        showCurrentFolderInfo(folderId, folderName);
+      }).catch(err => {
+        // Ignore if it's a duplicate error
+        if (err.message !== 'This folder has already been saved') {
+          console.error('Error saving folder:', err);
+        }
+      });
+    }).catch(function(error) {
+      console.error('Error fetching folder info:', error);
+      // If we can't get the folder name, just save with the ID as name
+      if (folderId !== 'root') {
+        sigmaToonzDB.addFolder({
+          folderId: folderId,
+          name: folderId,
+          tags: []
+        }).catch(err => {
+          // Ignore if it's a duplicate error
+          if (err.message !== 'This folder has already been saved') {
+            console.error('Error saving folder:', err);
+          }
+        });
+      }
+    });
+  } catch (error) {
+    console.error('Error in saveCurrentFolder:', error);
+  }
+}
+
+// Show current folder info in the UI
+function showCurrentFolderInfo(folderId, folderName) {
+  const currentFolderDisplay = document.getElementById('current-folder-display');
+  const currentFolderName = document.getElementById('current-folder-name');
+  
+  if (currentFolderDisplay && currentFolderName) {
+    currentFolderDisplay.style.display = 'flex';
+    
+    if (folderName) {
+      currentFolderName.textContent = folderName;
+    } else if (folderId === 'root') {
+      currentFolderName.textContent = 'Root Folder';
+    } else {
+      // Try to get the name from the database
+      sigmaToonzDB.getFolderByDriveId(folderId).then(folder => {
+        if (folder) {
+          currentFolderName.textContent = folder.name;
+        } else {
+          currentFolderName.textContent = folderId;
+        }
+      }).catch(() => {
+        currentFolderName.textContent = folderId;
+      });
+    }
+  }
 }
 
 function getFolderId() {
-  document.getElementById('parentfolder').value = localStorage.getItem("parentfolder");
+  const savedFolderId = localStorage.getItem("parentfolder");
+  document.getElementById('parentfolder').value = savedFolderId || '';
+  
+  // Check if we have a saved folder ID and we're not showing a loading UI yet
+  if (savedFolderId && !document.getElementById("contents").classList.contains("loaded")) {
+    // Show the folder info if available
+    showCurrentFolderInfo(savedFolderId);
+  }
 }
 
 /* ----------------------- */
@@ -330,6 +432,8 @@ function changeFolder() {
   // reset contents div
   document.getElementById("contents").classList.remove("loaded");
   document.getElementById("contents").innerHTML = "";
+  // hide current folder display
+  document.getElementById("current-folder-display").style.display = 'none';
   // reset localstorage
   localStorage.removeItem("email");
 }
@@ -357,12 +461,23 @@ document.documentElement.addEventListener('click', function(event) {
   }
 });
 
+// Initialize app after DOM is fully loaded
+document.addEventListener('DOMContentLoaded', function() {
+  // Initialize folder manager
+  if (folderManager) {
+    folderManager.loadTagFilters();
+  }
+  
+  // If we have a saved folder ID, attempt to show it
+  const savedFolderId = localStorage.getItem("parentfolder");
+  if (savedFolderId) {
+    showCurrentFolderInfo(savedFolderId);
+  }
+});
 
-
-
-// gapless playback attempt
-// the switch between two loaded audio elements still has a gap
-// can start playing second track early, but gap will be inconsistent
+/* ----------------------- */
+/* ----------MENU--------- */
+/* ----------------------- */
 
 /*
 <audio id="audio2" controls style="display: none;">
@@ -399,6 +514,5 @@ function lastTenSeconds() {
 
 audio.addEventListener("timeupdate", lastTenSeconds);
 audio.addEventListener("timeupdate", lastSecond);
-
 */
 

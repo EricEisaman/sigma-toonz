@@ -60,9 +60,22 @@ main {
   padding-bottom: 0px !important;
 }
 
-/* header */
+.header-wrapper {
+  position: fixed;
+  top: -70px;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+}
+
 header {
-  padding: 0px !important;
+  width: 100%;
+  margin: 0 !important;
+  padding: 0 !important;
+  --spacing: 0 !important;
+  --block-spacing-vertical: 0 !important;
+  position: relative;
+  z-index: 3;
 }
 
 header a:hover,
@@ -126,7 +139,7 @@ nav {
   position: absolute;
   right: 15px;
   top: 70px;
-  background: rgb(20, 20, 20);
+  background: rgba(20, 20, 20, 0.3);
   padding: 20px;
   padding-top: 15px;
   padding-bottom: 0px;
@@ -467,6 +480,14 @@ audio::-webkit-media-controls-volume-slider {
 }
 */
 
+.footer-wrapper {
+  position: fixed;
+  bottom: 60px;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+}
+
 footer {
   padding-top: 0px !important;
 }
@@ -505,6 +526,7 @@ ul#footer-links li:first-child {
 .content {
   position: relative;
   z-index: 1;
+  margin-top: 40px;
   padding: 20px;
   color: white;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);

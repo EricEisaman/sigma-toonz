@@ -288,14 +288,57 @@ class FolderManager {
       folderNameDisplay.textContent = folderName || folderId;
     }
     
+    // Show the current folder display
+    const currentFolderDisplay = document.getElementById('current-folder-display');
+    if (currentFolderDisplay) {
+      currentFolderDisplay.style.display = 'flex';
+    }
+    
     // Close the folder manager if it's in a modal
     const folderManager = document.getElementById('folder-manager-modal');
     if (folderManager) {
       folderManager.classList.remove('active');
     }
     
-    // Load folder contents using the existing function
-    handleAuthClick(folderId);
+    // Clear the contents and load the new folder
+    const contentsDiv = document.getElementById("contents");
+    contentsDiv.innerHTML = '';
+    contentsDiv.classList.remove("loaded");
+    
+    // Check if we have a valid token before loading contents
+    if (gapi.client.getToken() === null) {
+      // No token, request new one
+      tokenClient.callback = async (resp) => {
+        if (resp.error !== undefined) {
+          throw (resp);
+        }
+        getContents(folderId, "initial");
+      };
+      tokenClient.requestAccessToken({prompt: '', login_hint: localStorage.getItem("email")});
+    } else {
+      // We have a token, try to load contents
+      gapi.client.drive.files.list({
+        'pageSize': 1,
+        'q': "'"+folderId+"' in parents"
+      }).then(() => {
+        // Token is valid, load contents
+        getContents(folderId, "initial");
+      }).catch((error) => {
+        if (error.status === 401) {
+          // Token expired, request new one
+          tokenClient.callback = async (resp) => {
+            if (resp.error !== undefined) {
+              throw (resp);
+            }
+            getContents(folderId, "initial");
+          };
+          tokenClient.requestAccessToken({prompt: '', login_hint: localStorage.getItem("email")});
+        } else {
+          console.error('Error checking folder access:', error);
+          alert('Error accessing folder. Please try again.');
+        }
+      });
+    }
   }
 
   // Handle folder search

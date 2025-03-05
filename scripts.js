@@ -42,13 +42,11 @@ function handleAuthClick(folderId) {
         folderId = "root";
       }
 
-      // only load initial contents on first auth
-      if ( !document.getElementById("contents").classList.contains("loaded") ) {
-        getContents(folderId, "initial");
-        
-        // Show the current folder display
-        showCurrentFolderInfo(folderId);
-      }
+      // Load contents regardless of loaded state
+      getContents(folderId, "initial");
+      
+      // Show the current folder display
+      showCurrentFolderInfo(folderId);
 
       // set user email and URL
       gapi.client.drive.about.get({
@@ -121,17 +119,10 @@ function getContents(id, type) {
     // hide intro
     document.getElementById('intro').style.display = 'none';
 
-    // set location
-    if ( type == "initial" ) {
-      var location = "contents";
-    } else {
-      var location = id;
-
-      // check for previous load
-      if ( document.getElementById(location).classList.contains("loaded") ) {
-        return;
-      }
-    }
+    // Clear the contents div when switching folders
+    const contentsDiv = document.getElementById("contents");
+    contentsDiv.innerHTML = '';
+    contentsDiv.classList.remove("loaded");
     
     var files = response.result.files;
     if (files && files.length > 0) {
@@ -141,14 +132,12 @@ function getContents(id, type) {
         var file = files[i];
 
         if ( file.mimeType.includes("application/vnd.google-apps.folder") ) {
-          document.getElementById(location).innerHTML += `
+          contentsDiv.innerHTML += `
           <details id="${file.id}">
             <summary onclick="getContents('${file.id}')"><img src=""/><span>${file.name}</span></summary>
           </details>
           `;
         }
-
-        document.getElementById(location).classList.add("loaded");
       }
 
       //getArts();
@@ -158,19 +147,22 @@ function getContents(id, type) {
         var file = files[i];
 
         if ( file.mimeType.includes("audio") ) {
-          document.getElementById(location).innerHTML += `
+          contentsDiv.innerHTML += `
           <button class="track" onclick="playTrack('${file.id}', this)"><i class="fas fa-play"></i> ${file.name}</button>
           `;
         }
-
-        document.getElementById(location).classList.add("loaded");
       }
 
+      // Mark as loaded after all content is added
+      contentsDiv.classList.add("loaded");
+
     } else {
-      alert('No files found.'); 
+      contentsDiv.innerHTML = '<p>No files found in this folder.</p>'; 
     }
 
-    document.getElementById(location).firstElementChild.focus();
+    if (contentsDiv.firstElementChild) {
+      contentsDiv.firstElementChild.focus();
+    }
   }).catch(function(error) {
     if (error.status === 401) {
       alert("Sessions are only valid for 1 hour. Session will refresh automatically.");

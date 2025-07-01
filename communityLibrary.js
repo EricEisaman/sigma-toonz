@@ -21,7 +21,31 @@ class CommunityLibrary {
         name: 'Sigma Scholars Pathway',
         description: 'A collection of Sigma Toonz inspired by the Sigma Scholars Pathway project.',
         tags: ['rap', 'sigma scholars', 'community']
-      }
+      },
+      {
+        id: '1b3wtCCqjSExDotilcSlXRdWgrXa0p_bO',
+        name: 'Trail Vibes',
+        description: 'Sigma Scholar Toonz wit dat Trail Vibe.',
+        tags: ['nature', 'sigma scholars', 'community']
+      },
+      {
+        id: '1pEaSkdI6TcrdjJx8VaWX_q7CQpuzBpfp',
+        name: 'Meadow Munchies',
+        description: 'A collection of Sigma Toonz inspired by Nature.',
+        tags: ['nature', 'sigma scholars', 'community']
+      },
+      {
+        id: '19gVvLwgfrWbnkolrKPwHBz_zv2CV6TBH',
+        name: 'Ski Lake',
+        description: 'A collection of Sigma Toonz inspired by lake water sports.',
+        tags: ['nature', 'sigma scholars', 'community']
+      },
+      {
+        id: '1mWj536qxqfH_okE2yeeiIuUD9JZ7N3vJ',
+        name: 'Chill Hop Instrumentals',
+        description: 'Sigma Scholar Instrumentals wit dat Chill Hop Vibe.',
+        tags: ['chill', 'sigma scholars', 'community', 'lofi']
+      },
     ];
     
     this.initEventListeners();

@@ -46,6 +46,12 @@ class CommunityLibrary {
         description: 'Sigma Scholar Instrumentals wit dat Chill Hop Vibe.',
         tags: ['chill', 'sigma scholars', 'community', 'lofi']
       },
+      {
+        id: '1hLsS_6HIkg9kK7Lux3I4MMR_sjtUbe2m',
+        name: 'Meadow Dancing',
+        description: 'Sigma Scholar Instrumentals wit dat dancin vibe.',
+        tags: ['dance', 'sigma scholars', 'community', 'lofi']
+      },
     ];
     
     this.initEventListeners();

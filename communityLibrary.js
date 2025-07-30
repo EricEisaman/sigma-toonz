@@ -52,6 +52,12 @@ class CommunityLibrary {
         description: 'Sigma Scholar Instrumentals wit dat dancin vibe.',
         tags: ['dance', 'sigma scholars', 'community', 'lofi']
       },
+      {
+        id: '1ON4laMBkMR1YqOFOlLD_GiDaD2M6iiTv',
+        name: 'Say What',
+        description: 'Promoting good listeners.',
+        tags: ['service', 'sigma scholars', 'community', 'lofi', 'jazz']
+      },
     ];
     
     this.initEventListeners();

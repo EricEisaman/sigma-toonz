@@ -318,20 +318,29 @@ button.track i {
 }
 
 audio {
-  width: calc(100% - 100px);
+  width: calc(100% - 180px);
 }
 
 #next-btn,
-#prev-btn {
+#prev-btn,
+#repeat-mode-btn {
   background: none;
   border: none;
   width: auto;
   margin: 0px;
   padding: 17px;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
   z-index: 2;
   font-size: 14px;
+  color: #ccc;
+  transition: all 0.2s ease;
+}
+
+#next-btn:hover,
+#prev-btn:hover,
+#repeat-mode-btn:hover {
+  color: #fff;
 }
 
 #next-btn {
@@ -340,6 +349,38 @@ audio {
 
 #prev-btn {
   float: left;
+}
+
+#repeat-mode-btn {
+  float: left;
+  margin-left: 5px;
+}
+
+#repeat-mode-btn:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+#repeat-mode-btn.active {
+  color: var(--primary);
+}
+
+#repeat-mode-btn.active i {
+  animation: spin 2s linear infinite;
+}
+
+/* Special styling for track repeat mode (mode 1) */
+#repeat-mode-btn[title="Repeat Track"] {
+  color: #fff;
+}
+
+#repeat-mode-btn[title="Repeat Track"] i {
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
 #bars {
@@ -437,13 +478,14 @@ audio {
   }
 
   #next-btn,
-  #prev-btn {
+  #prev-btn,
+  #repeat-mode-btn {
     padding: 20px;
     color: #ddd;
   }
 
   audio {
-    width: calc(100% - 100px);
+    width: calc(100% - 180px);
     margin-top: 10px;
     margin-bottom: 10px;
     background: rgb(170, 170, 170);

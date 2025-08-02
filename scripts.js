@@ -156,6 +156,9 @@ function getContents(id, type) {
       // Mark as loaded after all content is added
       contentsDiv.classList.add("loaded");
 
+      // Reset repeat modes when loading new content
+      resetRepeatModes();
+
     } else {
       contentsDiv.innerHTML = '<p>No files found in this folder.</p>'; 
     }
@@ -297,6 +300,9 @@ if ( document.getElementsByClassName("playing")[0] ) {
   playing = false;
 }
 
+// Repeat mode variables
+let repeatMode = 0; // 0 = no repeat, 1 = track repeat, 2 = playlist repeat
+
 function playTrack(id, element, type) {
   // remove spinner if load in progress
   if ( document.getElementById("spinner") ) {
@@ -369,9 +375,19 @@ function prevTrack() {
 }
 
 function nextTrack() {
-  if ( playing.nextElementSibling ) {
+  if (playing.nextElementSibling) {
     resetIconToPlay();
     playing.nextElementSibling.click();
+  } else if (repeatMode === 2) {
+    // If we're at the end and repeat playlist is on, go to first track
+    const firstTrack = document.querySelector('.track');
+    if (firstTrack && firstTrack !== playing) {
+      resetIconToPlay();
+      playing.classList.remove("playing");
+      firstTrack.classList.add("playing");
+      playing = firstTrack;
+      firstTrack.click();
+    }
   }
 }
 
@@ -397,11 +413,71 @@ function resetIconToPause() {
   playing.innerHTML += indicator;
 }
 
-audio.onended = function() {
-  if ( playing.nextElementSibling ) {
-    playing.nextElementSibling.focus();
+// Repeat mode cycle function
+function cycleRepeatMode() {
+  repeatMode = (repeatMode + 1) % 3; // Cycle through 0, 1, 2
+  updateRepeatButton();
+}
+
+function updateRepeatButton() {
+  const btn = document.getElementById('repeat-mode-btn');
+  const icon = btn.querySelector('i');
+  
+  switch (repeatMode) {
+    case 0: // No repeat
+      btn.classList.remove('active');
+      icon.className = 'fas fa-redo';
+      btn.title = 'No Repeat';
+      break;
+    case 1: // Track repeat
+      btn.classList.add('active');
+      icon.className = 'fas fa-redo';
+      btn.title = 'Repeat Track';
+      break;
+    case 2: // Playlist repeat
+      btn.classList.add('active');
+      icon.className = 'fas fa-redo-alt';
+      btn.title = 'Repeat Playlist';
+      break;
   }
-  nextTrack();
+}
+
+function resetRepeatModes() {
+  repeatMode = 0;
+  updateRepeatButton();
+}
+
+audio.onended = function() {
+  if (repeatMode === 1) {
+    // Repeat current track
+    audio.currentTime = 0;
+    audio.play();
+  } else if (repeatMode === 2) {
+    // Check if we're at the end of the playlist
+    if (!playing.nextElementSibling) {
+      // We're at the end, go back to the first track
+      const firstTrack = document.querySelector('.track');
+      if (firstTrack && firstTrack !== playing) {
+        resetIconToPlay();
+        playing.classList.remove("playing");
+        firstTrack.classList.add("playing");
+        playing = firstTrack;
+        firstTrack.click();
+      }
+    } else {
+      // Continue to next track
+      if (playing.nextElementSibling) {
+        playing.nextElementSibling.focus();
+      }
+      nextTrack();
+    }
+  } else {
+    // Normal behavior - no repeat
+    if (playing.nextElementSibling) {
+      playing.nextElementSibling.focus();
+    }
+    nextTrack();
+  }
 };
 
 audio.onpause = function() {
@@ -428,6 +504,8 @@ function changeFolder() {
   document.getElementById("current-folder-display").style.display = 'none';
   // reset localstorage
   localStorage.removeItem("email");
+  // reset repeat modes
+  resetRepeatModes();
 }
 
 /* ----------------------- */

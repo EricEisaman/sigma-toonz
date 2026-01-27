@@ -17,6 +17,84 @@ class CommunityLibrary {
         tags: ['classical', 'sigma scholars', 'community']
       },
       {
+        id: '18EGclnwjYSOMODe0H-ALGLwqgYXu24o2',
+        name: 'Plushy Bounce',
+        description: 'Chill Hiphop.',
+        tags: ['hiphop', 'sigma scholars', 'community']
+      },
+      {
+        id: '1o1TFFR6YbwDFXIjwpVm1DHpEofTc9t3J',
+        name: 'Big Sig Crush Da Skib',
+        description: 'Competetive learning.',
+        tags: ['sigma scholars', 'community']
+      },
+      {
+        id: '1aI0lHvYLDjbUoru9oz5Ws1L8VRnX3Hco',
+        name: 'Doo-wop',
+        description: 'Sock hoppin.',
+        tags: ['sigma scholars', 'community']
+      },
+      {
+        id: '1mprU6ic-pagAAmirSgHtAGcnzX7aBlXf',
+        name: 'Saucy Sigs',
+        description: 'Thumpin.',
+        tags: ['sigma scholars', 'community']
+      },
+      {
+        id: '1o6qt4yth692ReP0Tq9t4aHvwubWlRusR',
+        name: 'Mount Sigma',
+        description: 'Country.',
+        tags: ['sigma scholars', 'community']
+      },
+      {
+        id: '1s01ytEhirOBuFLTjCjlIwgPj2IXagC9j',
+        name: 'Boss Battle',
+        description: 'Skib Bustin.',
+        tags: ['sigma scholars', 'community']
+      },
+      {
+        id: '1HJwFuS38QYY4mCMCwGHmMg986r-_Kbtu',
+        name: 'It Starts with Math',
+        description: 'Rising Together.',
+        tags: ['sigma scholars', 'community']
+      },
+      {
+        id: '12SNeimgmMEdHA8ix45uKTlp2p2q-cRcv',
+        name: 'Lil Siggy in Da City',
+        description: 'Country gal goes sigma.',
+        tags: ['sigma scholars', 'community']
+      },
+      {
+        id: '1MvZyev8Tc8uZddmpeP-UZbhctnCyyzcO',
+        name: 'Sigma Scholar Pants',
+        description: 'New Pop.',
+        tags: ['sigma scholars', 'community']
+      },
+      {
+        id: '1VGPcB2-L5psCFluIzdY95MJCx43RMer2',
+        name: 'We thank the Mids and Skibs',
+        description: 'Country.',
+        tags: ['sigma scholars', 'community']
+      },
+      {
+        id: '1XDSTqVL2ylweu1J_HLgNcw4seyhg6f0-',
+        name: 'Moose Juice Party',
+        description: 'Bouncy.',
+        tags: ['sigma scholars', 'community']
+      },
+      {
+        id: '1hEDZieB-jc2HD8j07Vz-DtfXVmEbJF5J',
+        name: 'SIGMATOPIA',
+        description: 'Mix it up!',
+        tags: ['sigma scholars', 'community']
+      },
+      {
+        id: '1Bwh7BPfxdG0fl0Jgvejmput3001yJsmb',
+        name: 'Heart Warming',
+        description: 'Love and Peace',
+        tags: ['sigma scholars', 'community']
+      },
+      {
         id: '1APpe9Hv5CEIs4pQrLW4YcA57FVb_xDv3',
         name: 'Sigma Scholars Pathway',
         description: 'A collection of Sigma Toonz inspired by the Sigma Scholars Pathway project.',

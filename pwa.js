@@ -1,4 +1,4 @@
-// PWA Support for Sigma Toonz
+// PWA Support for Sigma Toonz v1.00
 
 // Service Worker Registration
 if ('serviceWorker' in navigator) {

@@ -17,6 +17,18 @@ class CommunityLibrary {
         tags: ['classical', 'sigma scholars', 'community']
       },
       {
+        id: '1DAW0SUAKYsPXPCi-28g4c_kpeRmNexI6',
+        name: 'Peppa',
+        description: 'Peppa at da window.',
+        tags: ['window', 'sigma scholars', 'community']
+      },
+      {
+        id: '1JuAUtI9qoEwDpsW1g3HUCBR9CicyA-yr',
+        name: 'Elmo',
+        description: 'Elmo at da window.',
+        tags: ['window', 'sigma scholars', 'community']
+      },
+      {
         id: '18EGclnwjYSOMODe0H-ALGLwqgYXu24o2',
         name: 'Plushy Bounce',
         description: 'Chill Hiphop.',

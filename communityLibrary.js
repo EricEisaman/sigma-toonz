@@ -29,6 +29,12 @@ class CommunityLibrary {
         tags: ['window', 'sigma scholars', 'community']
       },
       {
+        id: '1iL9UxeBDUUE1WndNO-8YP-RN0XSH2UpO',
+        name: 'Monsters Inc',
+        description: 'Sulley and Mike at da window.',
+        tags: ['window', 'sigma scholars', 'community']
+      },
+      {
         id: '18EGclnwjYSOMODe0H-ALGLwqgYXu24o2',
         name: 'Plushy Bounce',
         description: 'Chill Hiphop.',

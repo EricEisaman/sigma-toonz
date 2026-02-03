@@ -35,6 +35,12 @@ class CommunityLibrary {
         tags: ['window', 'sigma scholars', 'community']
       },
       {
+        id: '1Q_835Xw37gq4GxN-YzsBbZIojzWH2Op5',
+        name: 'Fredy Fazbear',
+        description: 'Freddy at da window.',
+        tags: ['window', 'sigma scholars', 'community']
+      },
+      {
         id: '18EGclnwjYSOMODe0H-ALGLwqgYXu24o2',
         name: 'Plushy Bounce',
         description: 'Chill Hiphop.',

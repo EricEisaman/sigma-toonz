@@ -17,6 +17,12 @@ class CommunityLibrary {
         tags: ['classical', 'sigma scholars', 'community']
       },
       {
+        id: '1qYo5ZukxpAg3BFBPsoCG7tMP5QLphgHw',
+        name: 'Milhouse',
+        description: 'Milhouse at da window.',
+        tags: ['window', 'sigma scholars', 'community']
+      },
+      {
         id: '1DAW0SUAKYsPXPCi-28g4c_kpeRmNexI6',
         name: 'Peppa',
         description: 'Peppa at da window.',

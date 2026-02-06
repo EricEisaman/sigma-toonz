@@ -29,6 +29,12 @@ class CommunityLibrary {
         tags: ['window', 'sigma scholars', 'community']
       },
       {
+        id: '1UJWpan6A1hkmHx-ZlMdud8K6ZH4zemBm',
+        name: 'Amelia',
+        description: 'Amelia at da window.',
+        tags: ['window', 'sigma scholars', 'community']
+      },
+      {
         id: '1f0h9NHLDAMbJrnyY8hiO-THdlGzojid0',
         name: 'Chica',
         description: 'Chica at da window.',

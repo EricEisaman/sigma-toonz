@@ -17,6 +17,18 @@ class CommunityLibrary {
         tags: ['classical', 'sigma scholars', 'community']
       },
       {
+        id: '1dQHVVXgVyoGkuPpzHirOfvS4Fk1ZMv3k',
+        name: 'Hello Kitty',
+        description: 'Hello Kitty at da window.',
+        tags: ['window', 'sigma scholars', 'community']
+      },
+      {
+        id: '1k1UM0ulajZJWRyrBmjGVtPnnfJemr9NH',
+        name: 'Gween Bean',
+        description: 'Gween Bean at da window.',
+        tags: ['window', 'sigma scholars', 'community']
+      },
+      {
         id: '1qYo5ZukxpAg3BFBPsoCG7tMP5QLphgHw',
         name: 'Milhouse',
         description: 'Milhouse at da window.',

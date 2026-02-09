@@ -23,6 +23,12 @@ class CommunityLibrary {
         tags: ['window', 'sigma scholars', 'community']
       },
       {
+        id: '1EyIiHmJL9jra_XLr5CVu9g7TtHKBy-55',
+        name: 'Batz-Maru',
+        description: 'Batz-Maru at da window.',
+        tags: ['window', 'sigma scholars', 'community']
+      },
+      {
         id: '1k1UM0ulajZJWRyrBmjGVtPnnfJemr9NH',
         name: 'Gween Bean',
         description: 'Gween Bean at da window.',

@@ -17,6 +17,12 @@ class CommunityLibrary {
         tags: ['classical', 'sigma scholars', 'community']
       },
       {
+        id: '1Z7tMZqHuK9_CmDz78o7nKaDp_hO5nxWQ',
+        name: 'My Melody',
+        description: 'My Melody at da window.',
+        tags: ['window', 'sigma scholars', 'community']
+      },
+      {
         id: '1dQHVVXgVyoGkuPpzHirOfvS4Fk1ZMv3k',
         name: 'Hello Kitty',
         description: 'Hello Kitty at da window.',

@@ -18,8 +18,7 @@ const filesToCache = [
   '/manifest.json',
   'https://cdnjs.cloudflare.com/ajax/libs/picocss/1.4.4/pico.min.css',
   'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css',
-  'https://cdn.glitch.global/76036de6-7e2c-4853-b0dd-29c8cc0392b2/SigmaLogo64.png?v=1735331667279',
-  'https://cdn.glitch.global/76036de6-7e2c-4853-b0dd-29c8cc0392b2/SigmaLogo192.png?v=1735330048173'
+  '/img/sigma_logo.png',
 ];
 
 // Install event - cache necessary files
@@ -60,7 +59,6 @@ self.addEventListener('fetch', event => {
   
   // Skip cross-origin requests, like those for Google Analytics
   if (event.request.url.startsWith(self.location.origin) || 
-      event.request.url.includes('cdn.glitch.global') ||
       event.request.url.includes('cdnjs.cloudflare.com')) {
     
     event.respondWith(

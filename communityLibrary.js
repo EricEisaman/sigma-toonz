@@ -23,6 +23,12 @@ class CommunityLibrary {
         tags: ['window', 'sigma scholars', 'community']
       },
       {
+        id: '1wWNcemxR544OWeehBlK_W-hTLEsvK6wK',
+        name: 'Moose Juice Cafe',
+        description: 'Mighty Moose at da window.',
+        tags: ['window', 'sigma scholars', 'community']
+      },
+      {
         id: '1dQHVVXgVyoGkuPpzHirOfvS4Fk1ZMv3k',
         name: 'Hello Kitty',
         description: 'Hello Kitty at da window.',

@@ -17,6 +17,12 @@ class CommunityLibrary {
         tags: ['classical', 'sigma scholars', 'community']
       },
       {
+        id: '1JhGgrK5I4W8QuRdA0ZCXnYxts5zWh7Kr',
+        name: 'Moose Juice Ministry to Skibs',
+        description: 'Skib Kid at da window.',
+        tags: ['window', 'sigma scholars', 'community']
+      },
+      {
         id: '1Z7tMZqHuK9_CmDz78o7nKaDp_hO5nxWQ',
         name: 'My Melody',
         description: 'My Melody at da window.',

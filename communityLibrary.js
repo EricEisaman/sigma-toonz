@@ -17,6 +17,12 @@ class CommunityLibrary {
         tags: ['classical', 'sigma scholars', 'community']
       },
       {
+        id: '1W42a0DiOhTFPI3s5eRFM8Gxze56Q29-a',
+        name: 'Sigma Scholar Shop',
+        description: 'Skib Kid at da window of the shop.',
+        tags: ['window', 'sigma scholars', 'community']
+      },
+      {
         id: '1JhGgrK5I4W8QuRdA0ZCXnYxts5zWh7Kr',
         name: 'Moose Juice Ministry to Skibs',
         description: 'Skib Kid at da window.',

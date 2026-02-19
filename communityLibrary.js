@@ -17,6 +17,12 @@ class CommunityLibrary {
         tags: ['classical', 'sigma scholars', 'community']
       },
       {
+        id: '1lFcBOSNu7eOWUB3ZT2FhyGAMNl0Bprig',
+        name: 'Sigma Spirit',
+        description: 'The Spirit of Sigma.',
+        tags: ['window', 'sigma scholars', 'community']
+      },
+      {
         id: '1W42a0DiOhTFPI3s5eRFM8Gxze56Q29-a',
         name: 'Sigma Scholar Shop',
         description: 'Skib Kid at da window of the shop.',

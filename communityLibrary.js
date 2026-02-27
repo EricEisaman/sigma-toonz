@@ -23,6 +23,12 @@ class CommunityLibrary {
         tags: ['window', 'sigma scholars', 'community']
       },
       {
+        id: '1toZVQe2UUT911hhZSBdSDn6CD3dS6XLm',
+        name: 'Ponies',
+        description: 'The Spirit of Sigma Ponies.',
+        tags: ['window', 'sigma scholars', 'community']
+      },
+      {
         id: '1W42a0DiOhTFPI3s5eRFM8Gxze56Q29-a',
         name: 'Sigma Scholar Shop',
         description: 'Skib Kid at da window of the shop.',

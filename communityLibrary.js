@@ -29,6 +29,12 @@ class CommunityLibrary {
         tags: ['window', 'sigma scholars', 'community']
       },
       {
+        id: '1IW3kOjpeDmaC145Q_wDBwpcQnKvPL4EJ',
+        name: 'Africa',
+        description: 'The Spirit of Africa.',
+        tags: ['window', 'sigma scholars', 'community']
+      },
+      {
         id: '1W42a0DiOhTFPI3s5eRFM8Gxze56Q29-a',
         name: 'Sigma Scholar Shop',
         description: 'Skib Kid at da window of the shop.',

@@ -29,6 +29,12 @@ class CommunityLibrary {
         tags: ['window', 'sigma scholars', 'community']
       },
       {
+        id: '1lziPo4U99epfNCeEr0wq1fLn4b8tbnbD',
+        name: 'Big Sig and the Pegasi',
+        description: 'The Spirit of Sigma.',
+        tags: ['window', 'sigma scholars', 'community']
+      },
+      {
         id: '1IW3kOjpeDmaC145Q_wDBwpcQnKvPL4EJ',
         name: 'Africa',
         description: 'The Spirit of Africa.',

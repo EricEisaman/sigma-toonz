@@ -23,6 +23,12 @@ class CommunityLibrary {
         tags: ['window', 'sigma scholars', 'community']
       },
       {
+        id: '1mT1-PxRDKnbAYyA0HMpcxsCHKL7mGPze',
+        name: 'Twin Scholars',
+        description: 'Twin Scholars.',
+        tags: ['window', 'sigma scholars', 'community']
+      },
+      {
         id: '1toZVQe2UUT911hhZSBdSDn6CD3dS6XLm',
         name: 'Ponies',
         description: 'The Spirit of Sigma Ponies.',

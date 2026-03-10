@@ -17,6 +17,12 @@ class CommunityLibrary {
         tags: ['classical', 'sigma scholars', 'community']
       },
       {
+        id: '1IN6tuEDiMAizTRRZd_wioD3IpMV0jHD5',
+        name: 'Upbeat Siggin',
+        description: 'The Spirit Upbeat Sigma.',
+        tags: ['window', 'sigma scholars', 'community']
+      },
+      {
         id: '1SDlz_EzKkC7xorPgqEvWvKJUXN21y6Z2',
         name: 'Twins Siggin',
         description: 'The Spirit of Sigma.',

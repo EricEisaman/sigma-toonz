@@ -17,6 +17,12 @@ class CommunityLibrary {
         tags: ['classical', 'sigma scholars', 'community']
       },
       {
+        id: '13ThYWJtbjpKwMOWZkWj3_rVsBRRcvmQU',
+        name: 'Siggin Safari',
+        description: 'The Spirit Upbeat Sigma.',
+        tags: ['window', 'sigma scholars', 'community']
+      },
+      {
         id: '1sfrvKiDWTplNGpzQ8b3ylK3KIzjgr0gX',
         name: 'Siggin and Diggin',
         description: 'The Spirit Upbeat Sigma.',

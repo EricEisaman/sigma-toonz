@@ -17,6 +17,12 @@ class CommunityLibrary {
         tags: ['classical', 'sigma scholars', 'community']
       },
       {
+        id: '1QxoqYARjxJ6V73TalzrjGCTvipYmhtr_',
+        name: 'Spring Thang',
+        description: 'The Spirit Upbeat Sigma.',
+        tags: ['window', 'sigma scholars', 'community']
+      },
+      {
         id: '1kHonjtSDt2zDisIjK9L22NQRV3gurFJ8',
         name: 'ANYTHING BUT A BACKPACK',
         description: 'The Spirit Upbeat Sigma.',

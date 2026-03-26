@@ -17,6 +17,12 @@ class CommunityLibrary {
         tags: ['classical', 'sigma scholars', 'community']
       },
       {
+        id: '1XCckoMbFZh23v4uhukRAaMJtF2fqimOe',
+        name: 'Mid to Sigma',
+        description: 'The Spirit Upbeat Sigma.',
+        tags: ['window', 'sigma scholars', 'community']
+      },
+      {
         id: '1QxoqYARjxJ6V73TalzrjGCTvipYmhtr_',
         name: 'Spring Thang',
         description: 'The Spirit Upbeat Sigma.',

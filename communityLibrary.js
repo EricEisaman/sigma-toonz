@@ -23,6 +23,24 @@ class CommunityLibrary {
         tags: ['window', 'sigma scholars', 'community']
       },
       {
+        id: '1soTUH2ExbS7CWtCPsJ9_MeoIGSXIXGNv',
+        name: 'GLOW UP',
+        description: 'The Spirit Upbeat Sigma.',
+        tags: ['window', 'sigma scholars', 'community']
+      },
+      {
+        id: '1maN8axrDN221p-FcZgePmdVVZRfEK4wB',
+        name: 'U to A',
+        description: 'The Spirit Upbeat Sigma.',
+        tags: ['window', 'sigma scholars', 'community']
+      },
+      {
+        id: '1NJ9_cl4y1CZ8CAKwkPKLiBCBibcl_ibK',
+        name: 'SIGS LOVE THE MIDS',
+        description: 'The Spirit Upbeat Sigma.',
+        tags: ['window', 'sigma scholars', 'community']
+      },
+      {
         id: '1XCckoMbFZh23v4uhukRAaMJtF2fqimOe',
         name: 'Mid to Sigma',
         description: 'The Spirit Upbeat Sigma.',

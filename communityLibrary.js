@@ -17,8 +17,8 @@ class CommunityLibrary {
         tags: ['classical', 'sigma scholars', 'community']
       },
       {
-        id: '1NJ9_cl4y1CZ8CAKwkPKLiBCBibcl_ibK',
-        name: 'SIGS LOVE THE MIDS',
+        id: '11jPyMic71R6kKW1l37mhDuoXlydcf69Q',
+        name: 'FREE MATH TUTORING',
         description: 'The Spirit Upbeat Sigma.',
         tags: ['window', 'sigma scholars', 'community']
       },

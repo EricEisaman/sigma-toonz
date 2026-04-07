@@ -17,6 +17,12 @@ class CommunityLibrary {
         tags: ['classical', 'sigma scholars', 'community']
       },
       {
+        id: '16vctHFecT4XgfiWmi-MXrvbJlV6VPMRw',
+        name: 'NASA',
+        description: 'The Spirit Upbeat Sigma.',
+        tags: ['window', 'sigma scholars', 'community']
+      },
+      {
         id: '1zzbUHt1lABP0Jy1JysGtzRMzlrNYaP9h',
         name: 'LETS GET SIGGIN',
         description: 'The Spirit Upbeat Sigma.',

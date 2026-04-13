@@ -17,6 +17,12 @@ class CommunityLibrary {
         tags: ['classical', 'sigma scholars', 'community']
       },
       {
+        id: '1pCmGbVMWNxWo-gHDrvuMR_mkMxZYdH__',
+        name: 'FISHIN',
+        description: 'The Spirit Upbeat Sigma.',
+        tags: ['window', 'sigma scholars', 'community']
+      },
+      {
         id: '1N_kto8GxOXMpAJ4huO41m-4fdjtZdWax',
         name: 'MOOSE JUICE SPRING',
         description: 'The Spirit Upbeat Sigma.',

@@ -17,6 +17,12 @@ class CommunityLibrary {
         tags: ['classical', 'sigma scholars', 'community']
       },
       {
+        id: '1Ii1tZeoms110nOBLWIOiO--T6M0Tw6EW',
+        name: 'MILITARY GRADE',
+        description: 'The Spirit Upbeat Sigma.',
+        tags: ['window', 'sigma scholars', 'community']
+      },
+      {
         id: '1pCmGbVMWNxWo-gHDrvuMR_mkMxZYdH__',
         name: 'FISHIN',
         description: 'The Spirit Upbeat Sigma.',

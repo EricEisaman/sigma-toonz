@@ -5,6 +5,12 @@ class CommunityLibrary {
     // Initial community folders - hard coded for now
     this.communityFolders = [
       {
+        id: '1zon9SRIZ1rGWHsHsZm2F7umZDMcrvGJu',
+        name: 'Springtime Unity',
+        description: 'A collection of Sigma Twin Toonz.',
+        tags: ['rap', 'nature', 'community', 'sigma scholars']
+      },
+      {
         id: '1t6XkiO6JRcQC-GwIYxX5WopIe-zgvPL4',
         name: 'Spring Scholar Shop',
         description: 'A collection of Sigma Toonz.',

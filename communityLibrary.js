@@ -5,6 +5,12 @@ class CommunityLibrary {
     // Initial community folders - hard coded for now
     this.communityFolders = [
       {
+        id: '1TUZj2YjIBDQylq1gbuSRzi03hLMGSUG-',
+        name: 'Newbury Comics',
+        description: 'A collection of Boston vibes.',
+        tags: ['rap', 'rnb', 'nature', 'community', 'sigma scholars']
+      },
+      {
         id: '1uRpTBYaoahvSsw_NDY6cBjYAXljPuMgu',
         name: 'Fenway',
         description: 'A collection of Fenway.',

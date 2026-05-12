@@ -5,6 +5,12 @@ class CommunityLibrary {
     // Initial community folders - hard coded for now
     this.communityFolders = [
       {
+        id: '1DVVnsOllmYTcqAXQGX7WkyzSFzeyZswb',
+        name: 'CSD',
+        description: 'A collection of CSD vibes.',
+        tags: ['rap', 'rnb', 'nature', 'community', 'sigma scholars']
+      },
+      {
         id: '1lOoKfNpSJDF0PRumn0DN_RiQCKOWzQPF',
         name: 'Game Jam',
         description: 'A collection of game jam vibes.',

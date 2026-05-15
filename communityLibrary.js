@@ -5,6 +5,12 @@ class CommunityLibrary {
     // Initial community folders - hard coded for now
     this.communityFolders = [
       {
+        id: '16s7F9iVAxmaZ7tKl7KkfK3nOcQ9UA3TL',
+        name: 'Sigma Jazz',
+        description: 'A collection of Jazzy vibes.',
+        tags: ['jazz', 'rnb', 'nature', 'community', 'sigma scholars']
+      },
+      {
         id: '1DVVnsOllmYTcqAXQGX7WkyzSFzeyZswb',
         name: 'CSD',
         description: 'A collection of CSD vibes.',

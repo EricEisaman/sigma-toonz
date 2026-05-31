@@ -5,6 +5,12 @@ class CommunityLibrary {
     // Initial community folders - hard coded for now
     this.communityFolders = [
       {
+        id: '1oaUqM3ikFevoxz9jr5nqoLF3R2hTmtyJ',
+        name: 'SIGGIN EMOS',
+        description: 'A collection of emo vibes.',
+        tags: ['flex', 'rnb', 'nature', 'community', 'sigma scholars']
+      },
+      {
         id: '1W9CQZBnYS9SyFrBJL6ZSx-F_93eGp4g3',
         name: 'SIGGIN COUNTRY',
         description: 'A collection of country vibes.',

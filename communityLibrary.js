@@ -5,6 +5,12 @@ class CommunityLibrary {
     // Initial community folders - hard coded for now
     this.communityFolders = [
       {
+        id: '1VlQY6GBUMg2fL5vDIFGtVfw4g0PsT2dX',
+        name: 'LIL SIGGY MEMES',
+        description: 'A collection of meme vibes.',
+        tags: ['flex', 'folk', 'nature', 'community', 'sigma scholars']
+      },
+      {
         id: '1Z-4cuP2hxUYuqyUgCG1ZGnOigoNjxRWd',
         name: 'SIGGY ADA',
         description: 'A collection of nom Ada vibes.',

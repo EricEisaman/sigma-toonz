@@ -5,6 +5,12 @@ class CommunityLibrary {
     // Initial community folders - hard coded for now
     this.communityFolders = [
       {
+        id: '1I8t38d-7zD_itDlqmQtgYDZuMZIIlTJM',
+        name: 'SIGMA LAKE JAZZ',
+        description: 'A collection of lake jazz vibes.',
+        tags: ['flex', 'folk', 'nature', 'community', 'sigma scholars']
+      },
+      {
         id: '1YcG9pLj-mUA9nODsh7Cu2F2_g0Qkvxo8',
         name: 'FRENCH CAFE JAZZ',
         description: 'A collection of french jazz vibes.',

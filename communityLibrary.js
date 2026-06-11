@@ -5,6 +5,12 @@ class CommunityLibrary {
     // Initial community folders - hard coded for now
     this.communityFolders = [
       {
+        id: '1WiZTOe_weUHdeT1KLvzlmTTEDR4aZ1uJ',
+        name: 'BALLOON FEST',
+        description: 'A collection of lake festival vibes.',
+        tags: ['flex', 'folk', 'nature', 'community', 'sigma scholars']
+      },
+      {
         id: '1I8t38d-7zD_itDlqmQtgYDZuMZIIlTJM',
         name: 'SIGMA LAKE JAZZ',
         description: 'A collection of lake jazz vibes.',

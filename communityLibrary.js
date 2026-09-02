@@ -4,6 +4,12 @@ class CommunityLibrary {
   constructor() {
     // Initial community folders - hard coded for now
     this.communityFolders = [
+       {
+        id: '1r-exIv9mq1v4OXHN-EHwK8fV0WzCY6WQ',
+        name: 'SIGMASONIC',
+        description: 'A collection of cool toonz.',
+        tags: ['flex', 'math', 'tech', 'community', 'sigma scholars']
+      },
       {
         id: '1KmHNLXFIqZBhZKFrtTvciu55BIAPi6du',
         name: 'SIGGIN LIFE',

@@ -6,7 +6,7 @@ class CommunityLibrary {
     this.communityFolders = [
       {
         id: '1QDqEaAT7hIbdEBiE15nysViOXwEYjBS9',
-        name: 'SIGMAFEST',
+        name: 'SIGFEST',
         description: 'A collection of cool toonz.',
         tags: ['flex', 'math', 'tech', 'community', 'sigma scholars']
       },

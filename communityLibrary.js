@@ -5,6 +5,12 @@ class CommunityLibrary {
     // Initial community folders - hard coded for now
     this.communityFolders = [
       {
+        id: '1eCKXvD5u9Fl-0DjVLa3sQseI21U4L25-',
+        name: 'SIGMA SCHOLAR SOCIETY',
+        description: 'A collection of cool rap toonz.',
+        tags: ['flex', 'math', 'tech', 'community', 'sigma scholars']
+      },
+      {
         id: '1qP6R-jUqQFB1jiYwu2VDnwTMS-868Y4f',
         name: 'SIGMA SCHOLAR MAPLE FEST',
         description: 'A collection of cool folk toonz.',

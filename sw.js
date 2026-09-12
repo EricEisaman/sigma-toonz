@@ -1,6 +1,6 @@
 // Service Worker for Sigma Toonz PWA
 
-const CACHE_NAME = 'sigma-toonz-v1';
+const CACHE_NAME = 'sigma-toonz-v4';
 
 // Add all files that should be cached for offline use
 const filesToCache = [
@@ -13,8 +13,6 @@ const filesToCache = [
   '/folderManager.js',
   '/communityLibrary.js',
   '/pwa.js',
-  '/THREE.js',
-  '/ParticleBackground.js',
   '/manifest.json',
   'https://cdnjs.cloudflare.com/ajax/libs/picocss/1.4.4/pico.min.css',
   'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css',
@@ -56,6 +54,13 @@ self.addEventListener('activate', event => {
 // Fetch event - serve from cache or network
 self.addEventListener('fetch', event => {
   console.log('[ServiceWorker] Fetch', event.request.url);
+
+  if (event.request.mode === 'navigate') {
+    event.respondWith(
+      fetch(event.request).catch(() => caches.match('/index.html'))
+    );
+    return;
+  }
   
   // Skip cross-origin requests, like those for Google Analytics
   if (event.request.url.startsWith(self.location.origin) || 

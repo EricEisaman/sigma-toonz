@@ -11,6 +11,7 @@
     />
     <!-- PWA Meta Tags -->
     <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Sigma Toonz">
     <meta name="application-name" content="Sigma Toonz">
@@ -43,6 +44,17 @@
       href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
       rel="stylesheet"
     />
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.186.0/build/three.webgpu.js",
+          "three/tsl": "https://cdn.jsdelivr.net/npm/three@0.186.0/build/three.tsl.js",
+            "three/webgpu": "https://cdn.jsdelivr.net/npm/three@0.186.0/build/three.webgpu.js",
+            "three/webgl": "https://cdn.jsdelivr.net/npm/three@0.186.0/build/three.module.js",
+            "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.186.0/examples/jsm/"
+        }
+      }
+    </script>
   </head>
 
   <body onload="getFolderId()">
@@ -91,6 +103,15 @@
         </ul>
       </nav>
     </header>
+    </div>
+    <div class="background-controls" aria-label="Background controls">
+      <label for="background-style">Background</label>
+      <select id="background-style" aria-label="Choose animated background">
+        <option value="halftone">TSL Halftone</option>
+        <option value="galaxy">TSL Galaxy</option>
+        <option value="attractors">TSL Attractors</option>
+        <option value="tinker">TSL Tinker</option>
+      </select>
     </div>
     <div class="content">
       <main role="main" class="container">
@@ -296,25 +317,30 @@
         </div>
       </div>
 
-      <script src="./THREE.js"></script>
-      <script src="./ParticleBackground.js"></script>
-      <script>
-        // Initialize particle background
-        const background = new ParticleBackground({
-          particleCount: 3000,
-          particleSize: 0.5,
-          speed: 0.5,
-          opacity: 0.6,
-          color: "#ffffff",
-          depth: 500,
-          backgroundColor: "#000000",
-          enableDebug: false,
-        });
+      <script type="module">
+        try {
+          const forceWebGL = new URLSearchParams(window.location.search)
+            .get("webgpu")
+            ?.toLowerCase() === "false";
+          const moduleUrl = forceWebGL
+            ? "./ParticleBackgroundWebGL.js?v=1"
+            : "./ParticleBackground.js?v=17";
+          const { default: ParticleBackground } = await import(moduleUrl);
+          const background = new ParticleBackground({
+            mode: localStorage.getItem("sigma-background") || "halftone",
+            forceWebGL,
+          });
+          const backgroundStyle = document.getElementById("background-style");
+          backgroundStyle.value = background.mode;
+          backgroundStyle.addEventListener("change", (event) => {
+            localStorage.setItem("sigma-background", event.target.value);
+            background.setMode(event.target.value);
+          });
 
-        // Cleanup when needed
-        window.addEventListener("beforeunload", () => {
-          background.destroy();
-        });
+          window.addEventListener("beforeunload", () => background.destroy());
+        } catch (error) {
+          console.error("[SigmaBackground] Bootstrap failed", error);
+        }
       </script>
       <script type="text/javascript" src="db.js"></script>
       <script type="text/javascript" src="folderManager.js"></script>

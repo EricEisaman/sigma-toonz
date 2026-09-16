@@ -7,7 +7,7 @@ class CommunityLibrary {
       {
         id: '1wJwDXgJthGl2HAD3HZ213UzZ-9A4qcBO',
         name: 'MATH ROCKS!',
-        description: 'A collection of cool rap toonz.',
+        description: 'A collection of cool rocking toonz.',
         tags: ['flex', 'math', 'tech', 'community', 'sigma scholars']
       },
       {

@@ -6,7 +6,7 @@ class CommunityLibrary {
     this.communityFolders = [
       {
         id: '1-ijaWmI7zrc-xndYpm9LgsCn5N4_fIje',
-        name: 'WHO LET THE SKIBS OUT',
+        name: 'WHO LET THE SKIBS OUT?',
         description: 'A collection of cool toonz.',
         tags: ['flex', 'math', 'tech', 'community', 'sigma scholars']
       },

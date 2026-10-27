@@ -5,6 +5,12 @@ class CommunityLibrary {
     // Initial community folders - hard coded for now
     this.communityFolders = [
       {
+        id: '1HFyJEL2WL3t_8xTF3LURTvs_v2XmRvgw',
+        name: 'SIGMA OVER EPSILON',
+        description: 'A collection of cool toonz.',
+        tags: ['flex', 'math', 'tech', 'community', 'sigma scholars']
+      },
+      {
         id: '1nllsLpmVYc-b6WQrxSp1w6im6RV6jQ4i',
         name: 'EMO SIGGIES AND DA PLUSHIE POSSE',
         description: 'A collection of cool toonz.',

@@ -5,6 +5,12 @@ class CommunityLibrary {
     // Initial community folders - hard coded for now
     this.communityFolders = [
       {
+        id: '1TkAta6lwg1y0mZn858r4JYNKbPffIqRL',
+        name: 'MATH GODS',
+        description: 'A collection of cool toonz.',
+        tags: ['flex', 'math', 'tech', 'community', 'sigma scholars']
+      },
+      {
         id: '1Ll0nKKab0tPJerFBhozJFsqk4b73W2Bs',
         name: 'CROWN THE SIGSTER!',
         description: 'A collection of cool toonz.',
